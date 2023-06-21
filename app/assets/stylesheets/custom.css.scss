@@ -1,0 +1,18 @@
+@import 'semantic-ui';
+.chatbox{
+    height: 450px;
+}
+
+//These controll the height and scrolling of the chatbox interface
+#messages{
+    height: 15em;
+    overflow: auto;
+}
+
+//This hides the button 
+.input {
+    button {
+        display: none;
+
+    }
+}
