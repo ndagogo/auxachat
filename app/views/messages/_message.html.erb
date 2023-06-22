@@ -1,7 +1,8 @@
 <div class="event">
   <div class="content">
     <div class="summary">
-      <em class= "ui black label" ><%= message.user.username %></em>: <%= message.body %>
+      <em class= "ui black label" >From: <%= message.user.username %></em> <p class= "ui green label"><%= message.body %></p> 
+      <p class= "ui white label"><small>Seen <%= time_ago_in_words ( message.user.created_at)%> ago</small></p>
     </div>
   </div>
 </div>

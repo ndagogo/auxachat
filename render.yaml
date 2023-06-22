@@ -1,0 +1,24 @@
+databases:
+  - name: fwcchat
+    ipAllowList: []
+    plan: free
+    user: fwcchat
+
+services:
+  - type: web
+    plan: free
+    name: fwcchat
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fwcchat
+          property: connectionString
+
+
+
+      
