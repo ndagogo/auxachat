@@ -1,5 +1,17 @@
 class UsersController < ApplicationController
+    before_action :require_user, except: [:new, :create]
 
+    def index
+        @users = User.all
+    end
+
+
+    def show
+        @user = User.find(params[:user_id])
+    end
+
+
+    #This section handles the creation of new users
     def new
         @user = User.new
     end
@@ -14,6 +26,7 @@ class UsersController < ApplicationController
             render 'new'
         end
     end
+
 
     private
 

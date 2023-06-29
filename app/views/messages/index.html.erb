@@ -1,0 +1,13 @@
+<ul>
+    <% @messages.each do |message| %>
+        <li>
+        
+           <%= message.body %><br \>
+           From: <%= message.user.username %> 
+           <p>Sent At: <%= message.created_at %></p>
+           <br \>
+           <br \>
+
+        </li>
+    <% end %>    
+</ul>
